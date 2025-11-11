@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيبو لخدمات النظافة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: url('https://images.unsplash.com/photo-1581579180741-9c3b2e03a23d?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        header p {
+            font-size: 20px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+        nav {
+            background-color: #1c1c1c;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            display: inline-block;
+            padding: 16px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h2 {
+            color: #1c1c1c;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+        /* خدماتنا */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .service {
+            background-color: white;
+            padding: 30px;
+            flex: 1 1 280px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+        .service h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        /* معرض الصور */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* آراء العملاء */
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            text-align: center;
+            font-style: italic;
+        }
+        /* نموذج التواصل */
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        form button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover {
+            background-color: #388E3C;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #1c1c1c;
+            color: white;
+        }
+        /* زر الواتساب والاتصال */
+        .contact-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+        .contact-btn:hover {
+            transform: scale(1.1);
+        }
+        .contact-btn i {
+            font-size: 22px;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            .services {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>بيبو لخدمات النظافة</h1>
+    <p>نظافة راقية لمنزلك ومكتبك</p>
+</header>
+
+<nav>
+    <a href="#about">عن الشركة</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#gallery">معرض الصور</a>
+    <a href="#testimonials">آراء العملاء</a>
+    <a href="#contact">تواصل معنا</a>
+</nav>
+
+<section id="about">
+    <h2>عن الشركة</h2>
+    <p style="text-align:center; font-size:18px; line-height:1.6;">شركة بيبو لخدمات النظافة ملتزمة بتقديم خدمات تنظيف راقية وعالية الجودة، مع استخدام أفضل المعدات والمنتجات الصديقة للبيئة. هدفنا هو توفير بيئة نظيفة، صحية، ومرتبة لجميع عملائنا.</p>
+</section>
+
+<section id="services">
+    <h2>خدماتنا</h2>
+    <div class="services">
+        <div class="service">
+            <h3>تنظيف المنازل</h3>
+            <p>خدمات تنظيف شاملة للمنازل، من الأرضيات إلى النوافذ والمطبخ.</p>
+        </div>
+        <div class="service">
+            <h3>تنظيف المكاتب</h3>
+            <p>توفير بيئة عمل نظيفة وصحية للمكاتب والمحلات التجارية.</p>
+        </div>
+        <div class="service">
+            <h3>تعقيم وتعطير</h3>
+            <p>تعقيم وتعطير شامل للمساحات لضمان بيئة آمنة ومنتعشة.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>معرض الصور</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1581579180741-9c3b2e03a23d?auto=format&fit=crop&w=600&q=80" alt="تنظيف">
+        <img src="https://images.unsplash.com/photo-1597686291913-7c9a8a2b4c03?auto=format&fit=crop&w=600&q=80" alt="مكتب نظيف">
+        <img src="https://images.unsplash.com/photo-1600180758893-2e19d9db7b4c?auto=format&fit=crop&w=600&q=80" alt="تعقيم">
+    </div>
+</section>
+
+<section id="testimonials">
+    <h2>آراء العملاء</h2>
+    <div class="testimonials">
+        <div class="testimonial">"خدمة رائعة وفعلاً مهنية. منزلي لم يكن أنظف من قبل!"</div>
+        <div class="testimonial">"فريق بيبو ملتزم جداً بالمواعيد والنظافة عالية الجودة."</div>
+        <div class="testimonial">"أنصح الجميع بخدماتهم لتعقيم وتعطير المكاتب."</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>تواصل معنا</h2>
+    <form>
+        <input type="text" name="name" placeholder="الاسم" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <textarea name="message" rows="5" placeholder="رسالتك" required></textarea>
+        <button type="submit">إرسال</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 بيبو لخدمات النظافة. جميع الحقوق محفوظة.</p>
+</footer>
+
+<!-- زر واتساب و الاتصال -->
+<a class="contact-btn" href="https://wa.me/201022499364" target="_blank">
+    <i>📱</i> 01022499364
+</a>
+
+</body>
+</html>
